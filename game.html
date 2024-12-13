@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<link rel="stylesheet" href="style.html">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body style="background-color: black;">
@@ -63,7 +63,7 @@ So let's start!
 You selected: 
 </h3>
 
-<div id="buttonStatus">
+<div id="statsSec" style="display: none;">
 
 <h3 id="showRace"></h3>
 
@@ -100,13 +100,14 @@ Melee attack damage: <span id="melee">5</span>
 Inventory:
 </p>
 <p id="white">
-Gold: <span id="gold-amount">50</span><br>
+Gold: <span class="gold-amount"></span><br>
 Health potions: <span id="health-potions">0</span><br>
 Stamina potions: <span id="stamina-potions">0</span><br>
 Magicka potions: <span id="magicka-potions">0</span><br>
 Weapon: <span id="weapon">None</span>
 </p>
 </div>
+
 </div>
 <br>
 
@@ -130,11 +131,10 @@ Welcome to Blackhall Bar! How can I help you?
 	<div class="sel" data-name="Shop">Shop</div>
 	<div class="sel" data-name="Inn">Inn</div>
 	<div class="sel" data-name="Fields">Fields</div>
+	<div class="sel" data-name="Tournament">Tournament</div>
 
 <button id="buttonNext3">Next</button>
-<br>
-<br>
-<button id="statsButton">Stats</button>
+<button class="buttonStats4">Stats</button>
 </div>
 
 <div id="blackhallShop" style="display: none;">
@@ -146,32 +146,36 @@ Take a look at my fine wares.
 	<div class="shopItem" data-name="magic-potion" data-cost="20">Magicka potion 20 gold</div>
 	<div class="shopItem" data-name="wood-sword" data-cost="20">Wood sword 20 gold</div>
 
-<p id="yellow">Gold: <span id="gold-amount"></span></p>
+<p id="yellow">Gold: <span class="gold-amount"></span></p>
 <p id="itemPurchased" style="display: none";>Item Purchased</p>
 
-<button id="buttonBuy">Buy</button>
+<button id="buttonBuy1">Buy</button>
 <button id="buttonBack1">Back</button>
-<button id="statsButton">Stats</button>
+<button id="buttonStats3">Stats</button>
 </div>
 
 <div id="blackhallInn" style="display: none;">
 <h2>
 When battle has made you weary, a room will cure all.
 </h2>
-	<div class="sel" data-name="rent-room" data-cost="25">Rent a room 25 gold</div>
+	<div class="innBH" data-name="rent-room" data-cost="25">Rent a room 25 gold</div>
 
-<p id="yellow">Gold: <span id="gold-amount"></span></p>
+<p id="yellow">Gold: <span class="gold-amount"></span></p>
 <p id="roomRented" style="display: none";>Room rented. Health, Stamina, Magicka, restored</p>
 
 <button id="buttonBuy2">Buy</button>
 <button id="buttonBack2">Back</button>
-<button id="statsButton">Stats</button>
 
 </div>
 
 <div id="sectionFields" style="display: none;">
-<button id="statsButton">Stats</button>
+<button id="buttonStats1">Stats</button>
 </div>
+
+<div id="sectionTournament" style="display: none;">
+<button class="buttonStats2">Stats</button>
+</div>
+
 
 <script src="script.js"></script>
 </body>
