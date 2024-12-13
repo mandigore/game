@@ -1,0 +1,126 @@
+h1 {
+  color: #53B2B5;
+  border: 1px solid pink;
+}
+
+#yellowbg {
+  background-color: yellow;
+}
+
+#whitebg {
+  background-color: white;
+}
+
+#description-box {
+  position: absolute;
+  background-color: white;
+  border: 5px solid yellow;
+  padding: 10px;
+  display: none;
+  max-width: 200px;
+  pointer-events: none;
+  font-size: 14px;
+}
+
+.sel {
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.sel:hover {
+  color: black;
+  background-color: white;
+}
+
+.selected {
+  border: 3px solid white;
+  background-color: blue;
+  color: white;
+}
+
+.shopItem {
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.shopItem:hover {
+  color: black;
+  background-color: white;
+}
+
+.innBH {
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.innBH:hover {
+  color: black;
+  background-color: white;
+}
+
+button {
+  background-color: #39FF14;
+  color: black;
+  border-radius: 50px;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: red;
+}
+
+h2 {
+  background-color: #B6FF8F;
+}
+
+#red {
+  color: red;
+}
+#blue {
+  color: blue;
+}
+#green {
+  color: green;
+}
+
+#box {
+  border: 1px solid white;
+}
+
+#white {
+  color: white;
+}
+
+#yellow {
+  color: yellow;
+}
+
+#nameEntered {
+  color: yellow;
+}
+
+#nameButton {
+  background-color: white;
+  color: black;
+}
+
+#showRace {
+  background-color: yellow;
+}
+
+#itemPurchased {
+  color: yellow;
+}
+
+#roomRented {
+  color: yellow;
+}
