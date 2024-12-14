@@ -1,182 +1,215 @@
 <!doctype html>
 <html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-<link rel="stylesheet" href="style.css">
-</head>
+  <body style="background-color: black">
+    <div id="sectionRace">
+      <h1>Welcome to Kruckgore Fantasy!</h1>
 
-<body style="background-color: black;">
+      <h3 id="yellowbg">Please select a race:</h3>
 
-<div id="sectionRace">
+      <div>
+        <div
+          class="sel"
+          data-name="Wizard"
+          data-description="Wizards get spark magic as well as fire and ice, but not as powerful as Lizard or Ice Witch. They also get a boost on potions. They are weak to werewolves and strong against knights."
+        >
+          Wizard
+        </div>
 
-<h1>
-Welcome to Kruckgore Fantasy!
-</h1>
+        <div
+          class="sel"
+          data-name="Mermaid"
+          data-description="Mermaids use water magic and have a small magic boost. They are weak to plantoids and strong against lizards."
+        >
+          Mermaid
+        </div>
 
-<h3 id="yellowbg">
-Please select a race:
-</h3>
+        <div
+          class="sel"
+          data-name="Lizard"
+          data-description="Lizards have a boost on fire magic. They are weak to mermaids and strong against plantoids."
+        >
+          Lizard
+        </div>
 
-<div>
+        <div
+          class="sel"
+          data-name="Vampire"
+          data-description="Vampires use blood magic and can refill health by drinking blood. They are weak to knights and strong against ice witches."
+        >
+          Vampire
+        </div>
 
-	<div class="sel" data-name="Wizard" data-description="Wizards get spark magic as well as fire and ice, but not as powerful as Lizard or Ice Witch. They also get a boost on potions. They are weak to werewolves and strong against knights.">Wizard</div>
+        <div
+          class="sel"
+          data-name="Werewolf"
+          data-description="Werewolves get beast power, which are claws and fangs. They are weak to ice witches and strong against wizards."
+        >
+          Werewolf
+        </div>
 
-	<div class="sel" data-name="Mermaid" data-description="Mermaids use water magic and have a small magic boost. They are weak to plantoids and strong against lizards.">Mermaid</div>
+        <div
+          class="sel"
+          data-name="Knight"
+          data-description="Knights use silver weapons and have a boost on stamina but can't use magic. They are weak to wizards and strong against vampires."
+        >
+          Knight
+        </div>
 
-	<div class="sel" data-name="Lizard" data-description="Lizards have a boost on fire magic. They are weak to mermaids and strong against plantoids.">Lizard</div>
+        <div
+          class="sel"
+          data-name="Plantoid"
+          data-description="Plantoids are plant people, they use grass magic and have a small magic boost. They are weak to lizards and strong against mermaids."
+        >
+          Plantoid
+        </div>
 
-	<div class="sel" data-name="Vampire" data-description="Vampires use blood magic and can refill health by drinking blood. They are weak to knights and strong against ice witches.">Vampire</div>
+        <div
+          class="sel"
+          data-name="Ice_Witch"
+          data-description="Ice Witches have a boost on Ice magic. They are weak to vampires and strong against werewolves."
+        >
+          Ice_Witch
+        </div>
+      </div>
 
-	<div class="sel" data-name="Werewolf" data-description="Werewolves get beast power, which are claws and fangs. They are weak to ice witches and strong against wizards.">Werewolf</div>
+      <div id="description-box"></div>
 
-	<div class="sel" data-name="Knight" data-description="Knights use silver weapons and have a boost on stamina but can't use magic. They are weak to wizards and strong against vampires.">Knight</div>
+      <div id="nameRace">
+        <h2>
+          Name: <input type="text" id="name" />
+          <button id="nameButton">Enter</button>
+        </h2>
+        <p id="nameEntered" style="display: none" ;>Name Entered</p>
+      </div>
 
-	<div class="sel" data-name="Plantoid" data-description="Plantoids are plant people, they use grass magic and have a small magic boost. They are weak to lizards and strong against mermaids.">Plantoid</div>
+      <button id="buttonNext1">Next</button>
+    </div>
 
-	<div class="sel" data-name="Ice_Witch" data-description="Ice Witches have a boost on Ice magic. They are weak to vampires and strong against werewolves.">Ice_Witch</div>
+    <div id="sectionIntro" style="display: none">
+      <h2 id="welcome"></h2>
+      <h2>
+        In this game you'll go through dungeons and fields and finally a boss at
+        the end.<br />
+        There's also towns and shops where you can restock your inventory and
+        rest up.<br />
+        So let's start!
+      </h2>
+    
 
-</div>
+      <h3 id="whitebg">You selected:</h3>
+    </div>
 
-<div id="description-box"></div>
+<h3 id="showName" style="display: none; background-color: white"></h3>
 
-<div id="nameRace">
-<h2>
-Name: <input type="text" id="name">
-<button id="nameButton">Enter</button>
-</h2>
-<p id="nameEntered" style="display: none";>Name Entered</p>
-</div>
+      <div class="statsSec" style="display: none">
+        <h3 id="showRace"></h3>
 
-<button id="buttonNext1">Next</button>
+        <h3 id="whitebg">Stats:</h3>
 
-</div>
+        <div id="box">
+          <p id="red">Health: <span id="health">100</span></p>
 
-<div id="sectionStats" style="display: none;">
-<h2 id="welcome"></h2>
-<h2>
-In this game you'll go through dungeons and fields and finally a boss at the end.<br>
-There's also towns and shops where you can restock your inventory and rest up.<br>
-So let's start!
-</h2>
+          <p id="green">Stamina: <span id="stamina">100</span></p>
 
-<h3 id="whitebg">
-You selected: 
-</h3>
+          <p id="blue">Magicka: <span id="magicka">100</span></p>
+        </div>
 
-<div id="statsSec" style="display: none;">
+        <div id="box">
+          <p id="white">
+            Level: <span id="level">1</span><br />
+            Special ability and damage: <span id="special"></span
+            ><span id="magic">5</span><br />
+            Weakness: <span id="weakness"></span><br />
+            Strength: <span id="strength"></span><br />
+            Melee attack damage: <span id="melee">5</span>
+          </p>
+        </div>
 
-<h3 id="showRace"></h3>
+        <div id="box">
+          <p id="yellow">Inventory:</p>
+          <p id="white">
+            Gold: <span class="gold-amount"></span><br />
+            Health potions: <span class="health-potions"></span><br />
+            Stamina potions: <span class="stamina-potions"></span><br />
+            Magicka potions: <span class="magicka-potions"></span><br />
+            Weapon: <span class="weapon"></span>
+          </p>
+        </div>
+        <button id="field1Back" style="display: none">Back</button>
+      </div>
+      <br />
+    <div id="start" style="display: none">
+      <h2>Would you like to go into the fields or stop by a town?</h2>
 
-<h3 id="whitebg">
-Stats:
-</h3>
+      <div id="field-or-town">
+        <div class="sel" data-name="Fields">Fields</div>
+        <div class="sel" data-name="Town">Town</div>
+      </div>
 
-<div id="box">
-<p id="red">
-Health: <span id="health">100</span>
-</p>
+      <button id="buttonNext2">Next</button>
+    </div>
 
-<p id="green">
-Stamina: <span id="stamina">100</span>
-</p>
+    <div id="blackHall" style="display: none">
+      <h2>Welcome to Blackhall Bar! How can I help you?</h2>
+      <div class="sel" data-name="Shop">Shop</div>
+      <div class="sel" data-name="Inn">Inn</div>
+      <div class="sel" data-name="Fields">Fields</div>
+      <div class="sel" data-name="Tournament">Tournament</div>
 
-<p id="blue">
-Magicka: <span id="magicka">100</span>
-</p>
-</div>
+      <button id="buttonNext3">Next</button>
+      <button class="buttonStats4">Stats</button>
+    </div>
 
-<div id="box">
-<p id="white">
-Level: <span id="level">1</span><br>
-Special ability and damage: <span id="special"></span><span id="magic">5</span><br>
-Weakness: <span id="weakness"></span><br>
-Strength: <span id="strength"></span><br>
-Melee attack damage: <span id="melee">5</span>  
-</p>
-</div>
+    <div id="blackhallShop" style="display: none">
+      <h2>Take a look at my fine wares.</h2>
+      <div class="shopItem" data-name="health-potion" data-cost="20">
+        Health potion 20 gold
+      </div>
+      <div class="shopItem" data-name="stamina-potion" data-cost="20">
+        Stamina potion 20 gold
+      </div>
+      <div class="shopItem" data-name="magic-potion" data-cost="20">
+        Magicka potion 20 gold
+      </div>
+      <div class="shopItem" data-name="wood-sword" data-cost="20">
+        Wood sword 20 gold
+      </div>
 
-<div id="box">
-<p id="yellow">
-Inventory:
-</p>
-<p id="white">
-Gold: <span class="gold-amount"></span><br>
-Health potions: <span id="health-potions">0</span><br>
-Stamina potions: <span id="stamina-potions">0</span><br>
-Magicka potions: <span id="magicka-potions">0</span><br>
-Weapon: <span id="weapon">None</span>
-</p>
-</div>
+      <p id="yellow">Gold: <span class="gold-amount"></span></p>
+      <p id="itemPurchased" style="display: none" ;>Item Purchased</p>
 
-</div>
-<br>
+      <button id="buttonBuy1">Buy</button>
+      <button id="buttonBack1">Back</button>
+      <button id="buttonStats3">Stats</button>
+    </div>
 
-<h2>
-Would you like to go into the fields or stop by a town?
-</h2>
+    <div id="blackhallInn" style="display: none">
+      <h2>When battle has made you weary, a room will cure all.</h2>
+      <div class="innBH" data-name="rent-room" data-cost="25">
+        Rent a room 25 gold
+      </div>
 
-<div id="field-or-town">
-	<div class="sel" data-name="Fields">Fields</div>
-	<div class="sel" data-name="Town">Town</div>
-</div>
+      <p id="yellow">Gold: <span class="gold-amount"></span></p>
+      <p id="roomRented" style="display: none" ;>
+        Room rented. Health, Stamina, Magicka, restored
+      </p>
 
-<button id="buttonNext2">Next</button>
+      <button id="buttonBuy2">Buy</button>
+      <button id="buttonBack2">Back</button>
+    </div>
 
-</div>
+    <div id="sectionFields" style="display: none">
+      <button id="buttonStats1">Stats</button>
+    </div>
 
-<div id="blackHall" style="display: none;">
-<h2>
-Welcome to Blackhall Bar! How can I help you?
-</h2>
-	<div class="sel" data-name="Shop">Shop</div>
-	<div class="sel" data-name="Inn">Inn</div>
-	<div class="sel" data-name="Fields">Fields</div>
-	<div class="sel" data-name="Tournament">Tournament</div>
+    <div id="sectionTournament" style="display: none">
+      <button class="buttonStats2">Stats</button>
+    </div>
 
-<button id="buttonNext3">Next</button>
-<button class="buttonStats4">Stats</button>
-</div>
-
-<div id="blackhallShop" style="display: none;">
-<h2>
-Take a look at my fine wares.
-</h2>
-	<div class="shopItem" data-name="health-potion" data-cost="20">Health potion 20 gold</div>
-	<div class="shopItem" data-name="stamina-potion" data-cost="20">Stamina potion 20 gold</div>
-	<div class="shopItem" data-name="magic-potion" data-cost="20">Magicka potion 20 gold</div>
-	<div class="shopItem" data-name="wood-sword" data-cost="20">Wood sword 20 gold</div>
-
-<p id="yellow">Gold: <span class="gold-amount"></span></p>
-<p id="itemPurchased" style="display: none";>Item Purchased</p>
-
-<button id="buttonBuy1">Buy</button>
-<button id="buttonBack1">Back</button>
-<button id="buttonStats3">Stats</button>
-</div>
-
-<div id="blackhallInn" style="display: none;">
-<h2>
-When battle has made you weary, a room will cure all.
-</h2>
-	<div class="innBH" data-name="rent-room" data-cost="25">Rent a room 25 gold</div>
-
-<p id="yellow">Gold: <span class="gold-amount"></span></p>
-<p id="roomRented" style="display: none";>Room rented. Health, Stamina, Magicka, restored</p>
-
-<button id="buttonBuy2">Buy</button>
-<button id="buttonBack2">Back</button>
-
-</div>
-
-<div id="sectionFields" style="display: none;">
-<button id="buttonStats1">Stats</button>
-</div>
-
-<div id="sectionTournament" style="display: none;">
-<button class="buttonStats2">Stats</button>
-</div>
-
-
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
