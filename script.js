@@ -42,11 +42,12 @@ buttonName.addEventListener("click", function () {
 
 const nextButton1 = document.getElementById("buttonNext1");
 const raceSection = document.getElementById("sectionRace");
-const statsSection = document.getElementById("sectionStats");
+const introSection = document.getElementById("sectionIntro");
 const displayAbility = document.getElementById("special");
 const displayWeakness = document.getElementById("weakness");
 const displayStrength = document.getElementById("strength");
-const stats = document.getElementById("statsSec");
+const startFT=document.getElementById("start");
+const stats = document.querySelector(".statsSec");
 
 const abilities = {
   Wizard: "Potion boost",
@@ -85,7 +86,9 @@ nextButton1.addEventListener("click", function () {
   if (selectedRace && name) {
     raceSection.style.display = "none";
     enteredName.style.display = "none";
-    statsSection.style.display = "block";
+    introSection.style.display = "block";
+    stats.style.display = "block";
+    startFT.style.display = "block";
     document.getElementById("showRace").innerHTML = selectedRace;
     const ability = abilities[selectedRace];
     displayAbility.innerHTML = ability + " ";
@@ -93,7 +96,6 @@ nextButton1.addEventListener("click", function () {
     displayWeakness.innerHTML = weakness;
     const strength = strengths[selectedRace];
     displayStrength.innerHTML = strength;
-    stats.style.display = "block";
   } else if (name == "") {
     alert("Every adventurer needs a name!");
     return;
@@ -109,6 +111,46 @@ function updateGold() {
   });
 }
 
+let hPotion = 0;
+const hPotionI = document.querySelectorAll(".health-potions");
+
+function updateHPotions() {
+  hPotionI.forEach((span) => {
+    span.innerHTML = hPotion;
+  });
+}
+
+let sPotion = 0;
+const sPotionI = document.querySelectorAll(".stamina-potions");
+
+function updateSPotions() {
+  sPotionI.forEach((span) => {
+    span.innerHTML = sPotion;
+  });
+}
+
+let mPotion = 0;
+const mPotionI = document.querySelectorAll(".magicka-potions");
+
+function updateMPotions() {
+  mPotionI.forEach((span) => {
+    span.innerHTML = mPotion;
+  });
+}
+
+let weapon = "None";
+const weaponI = document.querySelectorAll(".weapon");
+
+function updateWeapon() {
+  weaponI.forEach((span) => {
+    span.innerHTML = weapon;
+  });
+}
+
+updateWeapon();
+updateHPotions();
+updateSPotions();
+updateMPotions();
 updateGold();
 
 let selectFT = null;
@@ -127,14 +169,26 @@ const fields = document.getElementById("sectionFields");
 
 nextButton2.addEventListener("click", function () {
   if (selectFT == "Town") {
-    statsSection.style.display = "none";
+    stats.style.display = "none";
+    introSection.style.display="none";
+    startFT.style.display = "none";
     blackhall.style.display = "block";
   }
   if (selectFT == "Fields") {
-    statsSection.style.display = "none";
+    stats.style.display = "none";
     fields.style.display = "block";
+    startFT.style.display = "none";
+    introSection.style.display="none";
   }
 });
+
+const f1BackButt=document.getElementById("field1Back");
+
+f1BackButt.addEventListener("click", function () {
+  stats.style.display = "none";
+  fields.style.display = "block";
+  document.getElementById("showName").style.display="none";
+}); 
 
 let selectSIFT = null;
 
@@ -153,6 +207,9 @@ const statsButton1 = document.getElementById("buttonStats1");
 statsButton1.addEventListener("click", function () {
   fields.style.display = "none";
   stats.style.display = "block";
+  document.getElementById("showName").innerHTML=name;
+  document.getElementById("showName").style.display="block";
+  f1BackButt.style.display="block";
 });
 
 const nextButton3 = document.getElementById("buttonNext3");
@@ -217,6 +274,25 @@ buyButton1.addEventListener("click", function () {
       gold -= selectItem.cost;
       updateGold();
       item.style.display = "block";
+      setTimeout(() => {
+      item.style.display = "none";
+      }, 1500);
+        if (selectItem.name==="health-potion") {
+          hPotion++;
+          updateHPotions();
+        }
+        else if (selectItem.name==="stamina-potion") {
+          sPotion++;
+          updateSPotions();
+        }
+        else if (selectItem.name==="magic-potion") {
+          mPotion++;
+          updateMPotions();
+        }
+        else if (selectItem.name==="wood-sword") {
+          weapon="Wood sword";
+          updateWeapon();
+        }
     } else {
       alert("Not enough gold!");
     }
@@ -236,7 +312,7 @@ buyRoom.forEach((innBH) => {
     innBH.classList.add("selected");
     selectRoom = {
       name: innBH.getAttribute("data-name"),
-      cost: Number(innBH.getAttribute("data-cost"))
+      cost: Number(innBH.getAttribute("data-cost")),
     };
   });
 });
@@ -253,4 +329,4 @@ buyButton2.addEventListener("click", function () {
   } else {
     alert("Oops no room selected");
   }
-}); 
+});
