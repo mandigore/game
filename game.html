@@ -14,7 +14,7 @@
         <div
           class="sel"
           data-name="Wizard"
-          data-description="Wizards get spark magic as well as fire and ice, but not as powerful as Lizard or Ice Witch. They also get a boost on potions. They are weak to werewolves and strong against knights."
+          data-description="Wizards get spark magic as well as fire and ice, but not as powerful as Lizard or Ice Witch. They also get a boost on potions. They are equal to werewolves and strong against knights."
         >
           Wizard
         </div>
@@ -46,7 +46,7 @@
         <div
           class="sel"
           data-name="Werewolf"
-          data-description="Werewolves get beast power, which are claws and fangs. They are weak to ice witches and strong against wizards."
+          data-description="Werewolves get beast power, which are claws and fangs. They are weak to ice witches and equal to wizards."
         >
           Werewolf
         </div>
@@ -111,21 +111,21 @@
         <h3 id="whitebg">Stats:</h3>
 
         <div id="box">
-          <p id="red">Health: <span id="health">100</span></p>
+          <p id="red">Health: <span id="health"></span></p>
 
-          <p id="green">Stamina: <span id="stamina">100</span></p>
+          <p id="green">Stamina: <span id="stamina"></span></p>
 
-          <p id="blue">Magicka: <span id="magicka">100</span></p>
+          <p id="blue">Magicka: <span id="magicka"></span></p>
         </div>
 
         <div id="box">
           <p id="white">
-            Level: <span id="level">1</span><br />
-            Special ability and damage: <span id="special"></span
-            ><span id="magic">5</span><br />
+            Level: <span id="level"></span><br />
+            Special ability: <span id="special"></span
+            ><span id="magic"></span><br />
             Weakness: <span id="weakness"></span><br />
             Strength: <span id="strength"></span><br />
-            Melee attack damage: <span id="melee">5</span>
+            Melee attack damage: <span id="melee"></span>
           </p>
         </div>
 
@@ -139,7 +139,11 @@
             Weapon: <span class="weapon"></span>
           </p>
         </div>
-        <button id="field1Back" style="display: none">Back</button>
+        <button id="fieldBack" style="display: none">Back</button>
+        <button id="town1Back" style="display: none">Back</button>
+        <button id="townStatsBack" style="display: none">Back</button>
+        <button id="shopBack" style="display: none">Back</button>
+        <button id="fastTravel1" style="display: none">Fast Travel to Blackbear Hall</button>
       </div>
       <br />
     <div id="start" style="display: none">
@@ -154,14 +158,14 @@
     </div>
 
     <div id="blackHall" style="display: none">
-      <h2>Welcome to Blackhall Bar! How can I help you?</h2>
+      <h2>Welcome to Blackbear Hall! How can I help you?</h2>
       <div class="sel" data-name="Shop">Shop</div>
       <div class="sel" data-name="Inn">Inn</div>
       <div class="sel" data-name="Fields">Fields</div>
       <div class="sel" data-name="Tournament">Tournament</div>
 
       <button id="buttonNext3">Next</button>
-      <button class="buttonStats4">Stats</button>
+      <button id="buttonStats3">Stats</button>
     </div>
 
     <div id="blackhallShop" style="display: none">
@@ -175,8 +179,11 @@
       <div class="shopItem" data-name="magic-potion" data-cost="20">
         Magicka potion 20 gold
       </div>
-      <div class="shopItem" data-name="wood-sword" data-cost="20">
+      <div class="shopItem" id="wood" style="display: block" data-name="wood-sword" data-cost="20">
         Wood sword 20 gold
+      </div>
+      <div class="shopItem" id="silver" style="display: none" data-name="silver-sword" data-cost="20">
+        Silver sword 20 gold
       </div>
 
       <p id="yellow">Gold: <span class="gold-amount"></span></p>
@@ -184,7 +191,7 @@
 
       <button id="buttonBuy1">Buy</button>
       <button id="buttonBack1">Back</button>
-      <button id="buttonStats3">Stats</button>
+      <button id="buttonStats2">Stats</button>
     </div>
 
     <div id="blackhallInn" style="display: none">
@@ -202,8 +209,67 @@
       <button id="buttonBack2">Back</button>
     </div>
 
-    <div id="sectionFields" style="display: none">
+    <div id="sectionFields1" style="display: none">
+      <h2>
+        Slime field! choose to stay on path or battle.
+      </h2>
       <button id="buttonStats1">Stats</button>
+      <button id="path1F">Stay on path</button>
+      <button id="battle1F">Battle a slime</button>
+    </div>
+
+    <div id="sectionFields2" style="display: none">
+      <h2>
+        Slime field! choose to stay on path or battle.
+      </h2>
+      <button id="buttonStats4">Stats</button>
+      <button id="path2F">Stay on path</button>
+      <button id="battle2F">Battle a slime</button>
+    </div>
+
+    <div id="forcedSlime1" style="display: none">
+      <h2>
+        A green slime blocks your path!
+      </h2>
+    </div>
+
+    <div id="sectionFields3" style="display: none">
+      <h2>
+        Slime field! choose to stay on path or battle.
+      </h2>
+      <button id="buttonStats5">Stats</button>
+      <button id="path3F">Stay on path</button>
+      <button id="battle3F">Battle a slime</button>
+    </div>
+
+    <div id="forcedSlime2" style="display: none">
+      <h2>
+        A red slime blocks your path!
+      </h2>
+    </div>
+
+    <div id="sectionFields4" style="display: none">
+      <h2>
+        Slime field! choose to stay on path or battle.
+      </h2>
+      <button id="buttonStats6">Stats</button>
+      <button id="path4F">Stay on path</button>
+      <button id="battle4F">Battle a slime</button>
+    </div>
+
+    <div id="sectionFields5" style="display: none">
+      <h2>
+        Slime field! choose to stay on path or battle.
+      </h2>
+      <button id="buttonStats7">Stats</button>
+      <button id="path5F">Stay on path</button>
+      <button id="battle5F">Battle a slime</button>
+    </div>
+
+    <div id="forcedSlime3" style="display: none">
+      <h2>
+        A blue slime blocks your path!
+      </h2>
     </div>
 
     <div id="sectionTournament" style="display: none">
