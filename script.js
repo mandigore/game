@@ -82,8 +82,103 @@ const strengths = {
   Ice_Witch: "Werewolves",
 };
 
+let level = 1;
+let health = 100;
+let maxHealth = 100;
+let stamina = 100;
+let maxStamina = 100;
+let magicka = 100;
+let maxMagicka = 100;
+let meleeA=2;
+let magicA=5;
+
+function updateLevel() {
+document.getElementById("level").innerHTML = level;
+}
+
+function updateHealth() {
+  document.getElementById("health").innerHTML = health;
+}
+
+function updateStamina() {
+  document.getElementById("stamina").innerHTML = stamina;
+}
+
+function updateMagicka() {
+  document.getElementById("magicka").innerHTML = magicka;
+}
+
+function updateMelee() {
+  document.getElementById("melee").innerHTML = meleeA;
+}
+
+function updateMagic() {
+  document.getElementById("magic").innerHTML = "+"+magicA;
+}
+
+function knightNM() {
+    maxMagicka = 0;
+    magicka=0;
+    updateMagicka();
+    maxStamina+=50;
+    stamina=maxStamina;
+    updateStamina();
+    magicA+=45;
+    updateMagic();
+}
+
+function wizardNS() {
+  maxStamina=0;
+  stamina=0;
+  updateStamina();
+  magicA+=5;
+  updateMagic();
+}
+
+function werewolfP() {
+  meleeA+=6;
+  magicA+=3;
+  updateMelee();
+  updateMagic();
+}
+
+function merOrPlant() {
+  maxMagicka+=25;
+  magicka=maxMagicka;
+  updateMagicka();
+}
+
+function iceOrLiz () {
+  magicA+=5;
+  updateMagic();
+}
+
 nextButton1.addEventListener("click", function () {
   if (selectedRace && name) {
+    if (selectedRace=="Knight") {
+    document.getElementById("silver").style.display="block";
+    document.getElementById("wood").style.display="none";
+    knightNM(); 
+    }
+    else if (selectedRace=="Wizard") {
+      wizardNS();
+    }
+    else if (selectedRace=="Werewolf") {
+      document.getElementById("wood").style.display="none";
+      werewolfP();
+    }
+    else if (selectedRace=="Mermaid") {
+      merOrPlant();
+    }
+    else if (selectedRace=="Plantoid") {
+      merOrPlant();
+    }
+    else if (selectedRace=="Ice_Witch") {
+      iceOrLiz();
+    }
+    else if (selectedRace=="Lizard") {
+      iceOrLiz();
+    }
     raceSection.style.display = "none";
     enteredName.style.display = "none";
     introSection.style.display = "block";
@@ -99,7 +194,7 @@ nextButton1.addEventListener("click", function () {
   } else if (name == "") {
     alert("Every adventurer needs a name!");
     return;
-  }
+    }
 });
 
 let gold = 50;
@@ -147,7 +242,28 @@ function updateWeapon() {
   });
 }
 
+function levelUp() {
+  level += 1;
+  maxHealth += 5;
+  health = maxHealth;
+  updateHealth();
+  maxStamina += 5;
+  stamina = maxStamina;
+  updateStamina();
+  maxMagicka += 5;
+  magicka = maxMagicka;
+  updateMagicka();
+  meleeA+=2;
+  updateMelee();
+}
+
+updateLevel();
+updateHealth();
+updateStamina();
+updateMagicka();
 updateWeapon();
+updateMelee();
+updateMagic();
 updateHPotions();
 updateSPotions();
 updateMPotions();
@@ -165,7 +281,7 @@ selection.forEach((sel) => {
 
 const nextButton2 = document.getElementById("buttonNext2");
 const blackhall = document.getElementById("blackHall");
-const fields = document.getElementById("sectionFields");
+const fields1 = document.getElementById("sectionFields1");
 
 nextButton2.addEventListener("click", function () {
   if (selectFT == "Town") {
@@ -176,17 +292,17 @@ nextButton2.addEventListener("click", function () {
   }
   if (selectFT == "Fields") {
     stats.style.display = "none";
-    fields.style.display = "block";
+    fields1.style.display = "block";
     startFT.style.display = "none";
     introSection.style.display="none";
   }
 });
 
-const f1BackButt=document.getElementById("field1Back");
+const fBackButt=document.getElementById("fieldBack");
 
-f1BackButt.addEventListener("click", function () {
+fBackButt.addEventListener("click", function () {
   stats.style.display = "none";
-  fields.style.display = "block";
+  fields1.style.display = "block";
   document.getElementById("showName").style.display="none";
 }); 
 
@@ -203,14 +319,28 @@ selection.forEach((sel) => {
 updateGold();
 
 const statsButton1 = document.getElementById("buttonStats1");
+const ft1=document.getElementById("fastTravel1");
+const sBackButt=document.getElementById("shopBack");
+const bhBack=document.getElementById("townStatsBack");
 
 statsButton1.addEventListener("click", function () {
-  fields.style.display = "none";
+  fields1.style.display = "none";
   stats.style.display = "block";
   document.getElementById("showName").innerHTML=name;
   document.getElementById("showName").style.display="block";
-  f1BackButt.style.display="block";
+  fBackButt.style.display="block";
+  ft1.style.display="block";
+  sBackButt.style.display = "none";
+  bhBack.style.display = "none";
 });
+
+ft1.addEventListener("click", function () {
+  stats.style.display = "none";
+  blackhall.style.display = "block";
+  document.getElementById("showName").style.display="none";
+});
+
+//here goes battle
 
 const nextButton3 = document.getElementById("buttonNext3");
 const bhShop = document.getElementById("blackhallShop");
@@ -222,19 +352,57 @@ nextButton3.addEventListener("click", function () {
     blackhall.style.display = "none";
     bhShop.style.display = "block";
   }
-  if (selectSIFT == "Inn") {
+  else if (selectSIFT=="Inn") {
     blackhall.style.display = "none";
     bhInn.style.display = "block";
   }
-  if (selectSIFT == "Fields") {
+  else if (selectSIFT == "Fields") {
     blackhall.style.display = "none";
-    fields.style.display = "block";
+    fields1.style.display = "block";
   }
-  if (selectSIFT == "Tournament") {
+  else if (selectSIFT == "Tournament") {
     blackhall.style.display = "none";
     tournament.style.display = "block";
   }
 });
+
+const statsButton3 = document.getElementById("buttonStats3");
+
+statsButton3.addEventListener("click", function () {
+  blackhall.style.display = "none";
+  stats.style.display = "block";
+  document.getElementById("showName").innerHTML=name;
+  document.getElementById("showName").style.display="block";
+  bhBack.style.display="block";
+  ft1.style.display="none";
+  fBackButt.style.display="none";
+  sBackButt.style.display = "none";
+});
+
+bhBack.addEventListener("click", function () {
+  stats.style.display = "none";
+  blackhall.style.display = "block";
+  document.getElementById("showName").style.display="none";
+}); 
+
+const statsButton2 = document.getElementById("buttonStats2");
+
+statsButton2.addEventListener("click", function () {
+  bhShop.style.display = "none";
+  stats.style.display = "block";
+  document.getElementById("showName").innerHTML=name;
+  document.getElementById("showName").style.display="block";
+  sBackButt.style.display="block";
+  ft1.style.display="none";
+  fBackButt.style.display="none";
+  bhBack.style.display="none";
+});
+
+sBackButt.addEventListener("click", function () {
+  stats.style.display = "none";
+  bhShop.style.display = "block";
+  document.getElementById("showName").style.display="none";
+}); 
 
 const backButton1 = document.getElementById("buttonBack1");
 
@@ -292,6 +460,14 @@ buyButton1.addEventListener("click", function () {
         else if (selectItem.name==="wood-sword") {
           weapon="Wood sword";
           updateWeapon();
+          meleeA+=3;
+          updateMelee();
+        }
+        else if (selectItem.name==="silver-sword") {
+          weapon="Silver sword";
+          updateWeapon();
+          meleeA+=6;
+          updateMelee();
         }
     } else {
       alert("Not enough gold!");
@@ -323,6 +499,12 @@ buyButton2.addEventListener("click", function () {
       gold -= selectRoom.cost;
       updateGold();
       roomRent.style.display = "block";
+      health = maxHealth;
+      updateHealth();
+      stamina = maxStamina;
+      updateStamina();
+      magicka = maxMagicka;
+      updateMagicka();
     } else {
       alert("Not enough gold!");
     }
