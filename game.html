@@ -86,7 +86,7 @@
         <p id="nameEntered" style="display: none" ;>Name Entered</p>
       </div>
 
-      <button id="buttonNext1">Next</button>
+      <button id="nextButton1">Next</button>
     </div>
 
     <div id="sectionIntro" style="display: none">
@@ -139,7 +139,7 @@
             Weapon: <span class="weapon"></span>
           </p>
         </div>
-        <button id="fieldBack" style="display: none">Back</button>
+        <button id="fieldBack1" style="display: none">Back</button>
         <button id="town1Back" style="display: none">Back</button>
         <button id="townStatsBack" style="display: none">Back</button>
         <button id="shopBack" style="display: none">Back</button>
@@ -154,7 +154,7 @@
         <div class="sel" data-name="Town">Town</div>
       </div>
 
-      <button id="buttonNext2">Next</button>
+      <button id="nextButton2">Next</button>
     </div>
 
     <div id="blackHall" style="display: none">
@@ -164,7 +164,7 @@
       <div class="sel" data-name="Fields">Fields</div>
       <div class="sel" data-name="Tournament">Tournament</div>
 
-      <button id="buttonNext3">Next</button>
+      <button id="nextButton3">Next</button>
       <button id="buttonStats3">Stats</button>
     </div>
 
@@ -213,9 +213,10 @@
       <h2>
         Slime field! choose to stay on path or battle.
       </h2>
-      <button id="buttonStats1">Stats</button>
-      <button id="path1F">Stay on path</button>
-      <button id="battle1F">Battle a slime</button>
+      <div class="sel" data-name="path1F">Stay on path</div>
+      <div class="sel" data-name="battle1F">Battle a slime</div>
+      <button id="battle1F">Next</button>
+      <button id="statsField1">Stats</button>
     </div>
 
     <div id="sectionFields2" style="display: none">
@@ -270,6 +271,26 @@
       <h2>
         A blue slime blocks your path!
       </h2>
+    </div>
+
+    <div>
+      <h2>
+        A random slime has appeared!
+      </h2>
+      <div id="box">
+        <p id="red">Health:</p>
+      </div>
+      <img src="slime.png">
+      <div id="box">
+        <p id="red">Health: <span id="health"></span></p>
+        <p id="green">Stamina: <span id="stamina"></span></p>
+        <p id="blue">Magicka: <span id="magicka"></span></p>
+      </div>
+        <div class="sel" data-name="">Attack (melee)</div>
+        <div class="sel" data-name="">Attack (magic)</div>
+        <div class="sel" data-name="">Potion</div>
+        <div class="sel" data-name="">Flee</div>
+        <button>Next</button>
     </div>
 
     <div id="sectionTournament" style="display: none">
