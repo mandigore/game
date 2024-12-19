@@ -98,54 +98,55 @@
         rest up.<br />
         So let's start!
       </h2>
-    
 
       <h3 id="whitebg">You selected:</h3>
     </div>
 
-<h3 id="showName" style="display: none; background-color: white"></h3>
+    <h3 id="showName" style="display: none; background-color: white"></h3>
 
-      <div class="statsSec" style="display: none">
-        <h3 id="showRace"></h3>
+    <div class="statsSec" style="display: none">
+      <h3 id="showRace"></h3>
 
-        <h3 id="whitebg">Stats:</h3>
+      <h3 id="whitebg">Stats:</h3>
 
-        <div id="box">
-          <p id="red">Health: <span id="health"></span></p>
+      <div id="box">
+        <p id="red">Health: <span id="health"></span></p>
 
-          <p id="green">Stamina: <span id="stamina"></span></p>
+        <p id="green">Stamina: <span id="stamina"></span></p>
 
-          <p id="blue">Magicka: <span id="magicka"></span></p>
-        </div>
-
-        <div id="box">
-          <p id="white">
-            Level: <span id="level"></span><br />
-            Special ability: <span id="special"></span
-            ><span id="magic"></span><br />
-            Weakness: <span id="weakness"></span><br />
-            Strength: <span id="strength"></span><br />
-            Melee attack damage: <span id="melee"></span>
-          </p>
-        </div>
-
-        <div id="box">
-          <p id="yellow">Inventory:</p>
-          <p id="white">
-            Gold: <span class="gold-amount"></span><br />
-            Health potions: <span class="health-potions"></span><br />
-            Stamina potions: <span class="stamina-potions"></span><br />
-            Magicka potions: <span class="magicka-potions"></span><br />
-            Weapon: <span class="weapon"></span>
-          </p>
-        </div>
-        <button id="fieldBack1" style="display: none">Back</button>
-        <button id="town1Back" style="display: none">Back</button>
-        <button id="townStatsBack" style="display: none">Back</button>
-        <button id="shopBack" style="display: none">Back</button>
-        <button id="fastTravel1" style="display: none">Fast Travel to Blackbear Hall</button>
+        <p id="blue">Magicka: <span id="magicka"></span></p>
       </div>
-      <br />
+
+      <div id="box">
+        <p id="white">
+          Level: <span id="level"></span><br />
+          Special ability: <span id="special"></span><span id="magic"></span
+          ><br />
+          Weakness: <span id="weakness"></span><br />
+          Strength: <span id="strength"></span><br />
+          Melee attack damage: <span id="melee"></span>
+        </p>
+      </div>
+
+      <div id="box">
+        <p id="yellow">Inventory:</p>
+        <p id="white">
+          Gold: <span class="gold-amount"></span><br />
+          Health potions: <span class="health-potions"></span><br />
+          Stamina potions: <span class="stamina-potions"></span><br />
+          Magicka potions: <span class="magicka-potions"></span><br />
+          Weapon: <span class="weapon"></span>
+        </p>
+      </div>
+      <button id="fieldBack1" style="display: none">Back</button>
+      <button id="town1Back" style="display: none">Back</button>
+      <button id="townStatsBack" style="display: none">Back</button>
+      <button id="shopBack" style="display: none">Back</button>
+      <button id="fastTravel1" style="display: none">
+        Fast Travel to Blackbear Hall
+      </button>
+    </div>
+    <br />
     <div id="start" style="display: none">
       <h2>Would you like to go into the fields or stop by a town?</h2>
 
@@ -179,10 +180,22 @@
       <div class="shopItem" data-name="magic-potion" data-cost="20">
         Magicka potion 20 gold
       </div>
-      <div class="shopItem" id="wood" style="display: block" data-name="wood-sword" data-cost="20">
+      <div
+        class="shopItem"
+        id="wood"
+        style="display: block"
+        data-name="wood-sword"
+        data-cost="20"
+      >
         Wood sword 20 gold
       </div>
-      <div class="shopItem" id="silver" style="display: none" data-name="silver-sword" data-cost="20">
+      <div
+        class="shopItem"
+        id="silver"
+        style="display: none"
+        data-name="silver-sword"
+        data-cost="20"
+      >
         Silver sword 20 gold
       </div>
 
@@ -210,9 +223,7 @@
     </div>
 
     <div id="sectionFields1" style="display: none">
-      <h2>
-        Slime field! choose to stay on path or battle.
-      </h2>
+      <h2>Slime field! choose to stay on path or battle.</h2>
       <div class="sel" data-name="path1F">Stay on path</div>
       <div class="sel" data-name="battle1F">Battle a slime</div>
       <button id="battle1F">Next</button>
@@ -220,77 +231,107 @@
     </div>
 
     <div id="sectionFields2" style="display: none">
-      <h2>
-        Slime field! choose to stay on path or battle.
-      </h2>
-      <button id="buttonStats4">Stats</button>
-      <button id="path2F">Stay on path</button>
-      <button id="battle2F">Battle a slime</button>
+      <h2>You continue on slime field. Choose to stay on path or battle.</h2>
+      <div class="sel" data-name="path2F">Stay on path</div>
+      <div class="sel" data-name="battle2F">Battle a slime</div>
+      <button id="battle2F">Next</button>
+      <button id="statsField2">Stats</button>
     </div>
 
     <div id="forcedSlime1" style="display: none">
-      <h2>
-        A green slime blocks your path!
-      </h2>
-    </div>
-
-    <div id="sectionFields3" style="display: none">
-      <h2>
-        Slime field! choose to stay on path or battle.
-      </h2>
-      <button id="buttonStats5">Stats</button>
-      <button id="path3F">Stay on path</button>
-      <button id="battle3F">Battle a slime</button>
-    </div>
-
-    <div id="forcedSlime2" style="display: none">
-      <h2>
-        A red slime blocks your path!
-      </h2>
-    </div>
-
-    <div id="sectionFields4" style="display: none">
-      <h2>
-        Slime field! choose to stay on path or battle.
-      </h2>
-      <button id="buttonStats6">Stats</button>
-      <button id="path4F">Stay on path</button>
-      <button id="battle4F">Battle a slime</button>
-    </div>
-
-    <div id="sectionFields5" style="display: none">
-      <h2>
-        Slime field! choose to stay on path or battle.
-      </h2>
-      <button id="buttonStats7">Stats</button>
-      <button id="path5F">Stay on path</button>
-      <button id="battle5F">Battle a slime</button>
-    </div>
-
-    <div id="forcedSlime3" style="display: none">
-      <h2>
-        A blue slime blocks your path!
-      </h2>
-    </div>
-
-    <div>
-      <h2>
-        A random slime has appeared!
-      </h2>
+      <h2>A green slime blocks your path!</h2>
       <div id="box">
         <p id="red">Health:</p>
       </div>
-      <img src="slime.png">
+      <img src="slime.png" />
       <div id="box">
         <p id="red">Health: <span id="health"></span></p>
         <p id="green">Stamina: <span id="stamina"></span></p>
         <p id="blue">Magicka: <span id="magicka"></span></p>
       </div>
-        <div class="sel" data-name="">Attack (melee)</div>
-        <div class="sel" data-name="">Attack (magic)</div>
-        <div class="sel" data-name="">Potion</div>
-        <div class="sel" data-name="">Flee</div>
-        <button>Next</button>
+      <div class="sel" data-name="">Attack (melee)</div>
+      <div class="sel" data-name="">Attack (magic)</div>
+      <div class="sel" data-name="">Potion</div>
+      <div class="sel" data-name="">Flee</div>
+      <button>Next</button>
+    </div>
+
+    <div id="sectionFields3" style="display: none">
+      <h2>Remember you can return to Blackbear Hall in the stats. Choose to stay on path or battle.</h2>
+      <div class="sel" data-name="path3F">Stay on path</div>
+      <div class="sel" data-name="battle3F">Battle a slime</div>
+      <button id="battle3F">Next</button>
+      <button id="statsField3">Stats</button>
+    </div>
+
+    <div id="forcedSlime2" style="display: none">
+      <h2>A red slime blocks your path!</h2>
+      <div id="box">
+        <p id="red">Health:</p>
+      </div>
+      <img src="slime.png" />
+      <div id="box">
+        <p id="red">Health: <span id="health"></span></p>
+        <p id="green">Stamina: <span id="stamina"></span></p>
+        <p id="blue">Magicka: <span id="magicka"></span></p>
+      </div>
+      <div class="sel" data-name="">Attack (melee)</div>
+      <div class="sel" data-name="">Attack (magic)</div>
+      <div class="sel" data-name="">Potion</div>
+      <div class="sel" data-name="">Flee</div>
+      <button>Next</button>
+    </div>
+
+    <div id="sectionFields4" style="display: none">
+      <h2>Almost there! Choose to stay on path or battle.</h2>
+      <div class="sel" data-name="path4F">Stay on path</div>
+      <div class="sel" data-name="battle4F">Battle a slime</div>
+      <button id="battle4F">Next</button>
+      <button id="statsField4">Stats</button>
+    </div>
+
+    <div id="sectionFields5" style="display: none">
+      <h2>One more push! choose to stay on path or battle.</h2>
+      <div class="sel" data-name="path5F">Stay on path</div>
+      <div class="sel" data-name="battle5F">Battle a slime</div>
+      <button id="battle5F">Next</button>
+      <button id="statsField5">Stats</button>
+    </div>
+
+    <div id="forcedSlime3" style="display: none">
+      <h2>A blue slime blocks your path!</h2>
+      <div id="box">
+        <p id="red">Health:</p>
+      </div>
+      <img src="slime.png" />
+      <div id="box">
+        <p id="red">Health: <span id="health"></span></p>
+        <p id="green">Stamina: <span id="stamina"></span></p>
+        <p id="blue">Magicka: <span id="magicka"></span></p>
+      </div>
+      <div class="sel" data-name="">Attack (melee)</div>
+      <div class="sel" data-name="">Attack (magic)</div>
+      <div class="sel" data-name="">Potion</div>
+      <div class="sel" data-name="">Flee</div>
+      <button>Next</button>
+    </div>
+
+    <div id="battleField" style="display: none">
+      <h2>A random slime has appeared!</h2>
+      <div id="box">
+        <p id="red">Health:</p>
+      </div>
+      <img src="slime.png" />
+      <div id="box">
+        <p id="red">Health: <span id="health"></span></p>
+        <p id="green">Stamina: <span id="stamina"></span></p>
+        <p id="blue">Magicka: <span id="magicka"></span></p>
+      </div>
+      <div class="sel" data-name="">Attack (melee)</div>
+      <div class="sel" data-name="">Attack (magic)</div>
+      <div class="sel" data-name="">Potion</div>
+      <div class="sel" data-name="">Flee</div>
+      <button>Next</button>
     </div>
 
     <div id="sectionTournament" style="display: none">
